@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using _2048.Extensions;
 using _2048.Model;
 
 namespace _2048.View
@@ -17,7 +18,7 @@ namespace _2048.View
                 for (int j = 0; j < 4; j++)
                 {
                     Console.Write("|");
-                    Console.Write(gameBoard.board[i, j]);
+                    Console.Write(gameBoard.board[i, j].ToString().CenterPad(4));
                 }
                 Console.Write("|");
                 Console.Write('\n');

@@ -10,6 +10,7 @@ namespace _2048
 {
     class Program
     {
+        GameBoard gameBoard = new GameBoard();
         static void Main(string[] args)
         {
             OutputGame.ConsoleOutputGame(new GameBoard());
