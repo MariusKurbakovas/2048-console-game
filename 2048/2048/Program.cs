@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using _2048.GameLogic;
 using _2048.Model;
 using _2048.View;
 
@@ -10,11 +7,18 @@ namespace _2048
 {
     class Program
     {
-        GameBoard gameBoard = new GameBoard();
         static void Main(string[] args)
         {
-            OutputGame.ConsoleOutputGame(new GameBoard());
-            Console.ReadKey();
+            GameController game = new GameController();
+            OutputGame.ConsoleOutputGame(game.gameBoard);
+            var userInput = Console.ReadKey();
+            switch (userInput.Key){
+                case ConsoleKey.UpArrow:
+                    Console.ReadKey();
+                    break;
+                default:
+                    return;
+            }
         }
     }
 }

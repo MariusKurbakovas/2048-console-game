@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using _2048.Extensions;
 using _2048.Model;
 
@@ -12,18 +8,18 @@ namespace _2048.View
     {
         public static void ConsoleOutputGame(GameBoard gameBoard)
         {
-            Console.WriteLine("----------------");
-            for (int i = 0; i < 4; i++)
+            Console.WriteLine("---------------------");
+            for (int i = 0; i < AppConstants.AppConfig.BoardSize; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (int j = 0; j < AppConstants.AppConfig.BoardSize; j++)
                 {
                     Console.Write("|");
-                    Console.Write(gameBoard.board[i, j].ToString().CenterPad(4));
+                    Console.Write(gameBoard.board[i, j].ToString().CenterPad(AppConstants.AppConfig.MaxGameBoardIntLength));
                 }
                 Console.Write("|");
                 Console.Write('\n');
             }
-            Console.WriteLine("----------------");
+            Console.WriteLine("----------------------");
         }
     }
 }
