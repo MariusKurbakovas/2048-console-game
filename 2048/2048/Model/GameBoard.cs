@@ -28,5 +28,14 @@
             }
             return false;
         }
+
+        public bool BoardFull()
+        {
+            foreach(var element in board)
+            {
+                if (element == 0) return false;
+            }
+            return true;
+        }
     }
 }

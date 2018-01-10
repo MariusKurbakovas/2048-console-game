@@ -8,7 +8,7 @@ namespace _2048.View
     {
         public static void ConsoleOutputGame(GameBoard gameBoard)
         {
-            Console.WriteLine("---------------------");
+            Console.WriteLine("-------------------------");
             for (int i = 0; i < AppConstants.AppConfig.BoardSize; i++)
             {
                 for (int j = 0; j < AppConstants.AppConfig.BoardSize; j++)
@@ -16,17 +16,17 @@ namespace _2048.View
                     Console.Write("|");
                     if (gameBoard.board[i, j] != 0)
                     {
-                        Console.Write(gameBoard.board[i, j].ToString().CenterPad(AppConstants.AppConfig.MaxGameBoardIntLength));
+                        Console.Write(gameBoard.board[i, j].ToString().CenterPad(AppConstants.AppConfig.BoardIntPadLength));
                     }
                     else
                     {
-                        Console.Write("".CenterPad(AppConstants.AppConfig.MaxGameBoardIntLength));
+                        Console.Write("".CenterPad(AppConstants.AppConfig.BoardIntPadLength));
                     }
                 }
                 Console.Write("|");
                 Console.Write('\n');
             }
-            Console.WriteLine("----------------------");
+            Console.WriteLine("-------------------------");
         }
     }
 }

@@ -10,14 +10,14 @@ namespace _2048
     public interface IAppConfig
     {
         int BoardSize { get; }
-        int MaxGameBoardIntLength { get; }
+        int BoardIntPadLength { get; }
         int StartingValuesCount { get; }
     }
 
     public class AppConfig : IAppConfig
     {
         public int BoardSize => int.Parse(ConfigurationManager.AppSettings["BoardSize"]);
-        public int MaxGameBoardIntLength => int.Parse(ConfigurationManager.AppSettings["MaxGameBoardIntLength"]);
+        public int BoardIntPadLength => int.Parse(ConfigurationManager.AppSettings["BoardIntPadLength"]);
         public int StartingValuesCount => int.Parse(ConfigurationManager.AppSettings["StartingValuesCount"]);
     }
 }

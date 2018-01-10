@@ -66,13 +66,14 @@ namespace _2048.GameLogic
                 default:
                     return;
             }
+            //TODO: no need to check changes each time, the shift method can return true/false based on changes
             if (gameBoard.AreThereChanges(oldBoard))
             {
                 addRandomValue();
-            } 
+            }
         }
 
-        //TODO: 4 methods can be overwritten as one
+        //TODO: 4 methods can be overwritten as one or two
         private void VerticalUpShift()
         {
             var board = gameBoard.board;
