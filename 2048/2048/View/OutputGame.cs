@@ -14,7 +14,14 @@ namespace _2048.View
                 for (int j = 0; j < AppConstants.AppConfig.BoardSize; j++)
                 {
                     Console.Write("|");
-                    Console.Write(gameBoard.board[i, j].ToString().CenterPad(AppConstants.AppConfig.MaxGameBoardIntLength));
+                    if (gameBoard.board[i, j] != 0)
+                    {
+                        Console.Write(gameBoard.board[i, j].ToString().CenterPad(AppConstants.AppConfig.MaxGameBoardIntLength));
+                    }
+                    else
+                    {
+                        Console.Write("".CenterPad(AppConstants.AppConfig.MaxGameBoardIntLength));
+                    }
                 }
                 Console.Write("|");
                 Console.Write('\n');
