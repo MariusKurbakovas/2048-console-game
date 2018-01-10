@@ -6,9 +6,18 @@ namespace _2048.View
 {
     public class OutputGame
     {
+        private static void ConsoleOutputHorizontalLines(int dashCount)
+        {
+            for (int i = 0; i < dashCount; i++)
+            {
+                Console.Write('-');
+            }
+            Console.Write('\n');
+        }
+
         public static void ConsoleOutputGame(GameBoard gameBoard)
         {
-            Console.WriteLine("-------------------------");
+            ConsoleOutputHorizontalLines(AppConstants.AppConfig.BoardSize * 6 + 1);
             for (int i = 0; i < AppConstants.AppConfig.BoardSize; i++)
             {
                 for (int j = 0; j < AppConstants.AppConfig.BoardSize; j++)
@@ -26,7 +35,7 @@ namespace _2048.View
                 Console.Write("|");
                 Console.Write('\n');
             }
-            Console.WriteLine("-------------------------");
+            ConsoleOutputHorizontalLines(AppConstants.AppConfig.BoardSize * 6 + 1);
         }
     }
 }
